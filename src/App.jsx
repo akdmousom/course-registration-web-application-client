@@ -10,13 +10,20 @@ function App() {
 
   const [course, setCourse] = useState([]);
   const [books, setBooks] = useState([]);
-  
+  const [creditHour, setCreditHour] = useState(20)
+  const [totalPrice, setTotalPrice] = useState(0)
+
 
   const handleSelectBook = (book) => {
 
     const newBooks = [...books,book]
     setBooks(newBooks)
 
+  }
+
+  const handleTotalPrice = (price) =>{
+    const newTotalPrice = totalPrice + price
+    setTotalPrice(newTotalPrice)
   }
 
   useEffect(() => {
@@ -33,10 +40,10 @@ function App() {
       <div className='flex gap-4'>
         <div className='grid gap-4 mb-4 md:grid-cols-3'>
           {
-            course.map((course) => <Cards handleSelectBook={handleSelectBook} key={course.id} course={course} />)
+            course.map((course) => <Cards handleTotalPrice={handleTotalPrice} handleSelectBook={handleSelectBook} key={course.id} course={course} />)
           }
         </div>
-        <Cart books={books} />
+        <Cart totalPrice={totalPrice} creditHour={creditHour} books={books} />
       </div>
 
 

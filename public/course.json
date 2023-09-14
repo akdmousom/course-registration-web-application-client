@@ -1,19 +1,22 @@
 [
   {
+    "id": 1,
     "title": "Introduction to C Programming",
-    "description": "This course provides a comprehensive introduction to the C programming language. Students will learn the basic concepts of C programming",
+    "description": "This course provides a comprehensive introduction to the C programming language...",
     "price": 15000,
     "credit": 1,
     "img": "https://i.ibb.co/m5xsyPx/Rectangle-2-2.png"
   },
   {
+    "id": 2,
     "title": "Introduction to Algorithms",
-    "description": "This course provides an introduction to the design and analysis of efficient algorithms. Students will learn the fundamental concepts of algorithm design",
+    "description": "This course provides an introduction to the design and analysis of efficient algorithms... ",
     "price": 25000,
     "credit": 2,
     "img": "https://i.ibb.co/T4tSvPR/Rectangle-2-3.png"
   },
   {
+    "id": 3,
     "title": "Introduction to C++ for DSA",
     "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.ut.",
     "price": 10000,
@@ -21,6 +24,7 @@
     "img": "https://i.ibb.co/d6hV68T/Rectangle-2-4.png"
   },
   {
+    "id": 4,
     "title": "Basic Data Structures",
     "description": "This course provides an introduction to the C++ programming language for students who are interested in learning data structures and algorithms.",
     "price": 35000,
@@ -28,13 +32,15 @@
     "img": "https://i.ibb.co/C2HPLdq/Rectangle-3.png"
   },
   {
+    "id": 5,
     "title": "Introduction to OOP Python",
-    "description": "Object-oriented programming (OOP) is a programming paradigm that uses objects to represent data and behavior. Objects are self-contained units that encapsulate their data and methods",
+    "description": "Object-oriented programming (OOP) is a programming paradigm that uses objects to represent data and behavior. Objects are self-contained units that.",
     "price": 19000,
     "credit": 5,
     "img": "https://i.ibb.co/hVNrjpx/Rectangle-2.png"
   },
   {
+    "id": 6,
     "title": "Software Engineering",
     "description": "Software engineering is the application of engineering principles to the development of software systems. It is a systematic approach to the design, development, testing, and maintenance of software.",
     "price": 23000,
@@ -42,6 +48,7 @@
     "img": "https://i.ibb.co/L9Rwymd/Rectangle-2-5.png"
   },
   {
+    "id": 7,
     "title": "AWS, Cloud Computing",
     "description": "Cloud computing is a model for delivering computing services over the internet. It allows businesses to access computing resources, such as servers, storage, and databases, on demand without having to invest in and maintain their own infrastructure",
     "price": 35000,
@@ -49,6 +56,7 @@
     "img": "https://i.ibb.co/zZXz1xh/Rectangle-3-1.png"
   },
   {
+    "id": 8,
     "title": "Database (MySQL)",
     "description": "Relational databases are a type of database that stores data in tables. Tables are made up of rows and columns, and each row represents a record and each column represents a field. ",
     "price": 19000,
@@ -56,6 +64,7 @@
     "img": "https://i.ibb.co/4d7ktBY/Rectangle-2-1.png"
   },
   {
+    "id": 9,
     "title": "Problem-Solving Part",
     "description": "Problem-solving is the process of finding a solution to a problem. It is a critical skill that is essential for success in all walks of life.",
     "price": 23000,

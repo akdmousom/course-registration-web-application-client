@@ -2,7 +2,7 @@ import { BsCurrencyDollar, BsBook } from 'react-icons/bs'
 import PropTypes from 'prop-types';
 const Cards = ({ course, handleSelectBook, handleTotalPrice }) => {
 
-    const { title, img, credit, description, price } = course
+    const { id, title, img, credit, description, price } = course
 
 
     return (
@@ -18,7 +18,7 @@ const Cards = ({ course, handleSelectBook, handleTotalPrice }) => {
                     <p className='flex items-center text-base font-normal text-[#1C1B1B99] gap-2'><span><BsCurrencyDollar /></span> Price : {price} </p>
                     <p className='flex items-center text-base font-normal text-[#1C1B1B99] gap-2'><span><BsBook /></span> Credit : {credit} hr  </p>
                 </div>
-                <button onClick={() => { handleSelectBook(course); handleTotalPrice(price) }} className="btn text-lg font-semibold text-white hover:bg-blue-800 w-70 bg-[#2F80ED]">Select</button>
+                <button onClick={() => { handleSelectBook(course, id); handleTotalPrice(price, credit,id) }} className="btn text-lg font-semibold text-white hover:bg-blue-800 w-70 bg-[#2F80ED]">Select</button>
             </div>
 
         </div>
@@ -28,6 +28,7 @@ const Cards = ({ course, handleSelectBook, handleTotalPrice }) => {
 Cards.propTypes = {
     course: PropTypes.object.isRequired,
     handleSelectBook: PropTypes.func.isRequired,
+    handleTotalPrice: PropTypes.func.isRequired,
 }
 
 export default Cards;

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-const Cart = ({books, creditHour, totalPrice}) => {
+const Cart = ({books, creditHour, totalPrice, totalCreditHour}) => {
 
 
     
@@ -18,7 +18,7 @@ const Cart = ({books, creditHour, totalPrice}) => {
 
                     <hr />
 
-                    <p className="text-base my-2 font-medium">Total Credit Hour : </p>
+                    <p className="text-base my-2 font-medium">Total Credit Hour : {totalCreditHour} </p>
 
                     <hr />
 
@@ -32,7 +32,10 @@ const Cart = ({books, creditHour, totalPrice}) => {
 
 Cart.propTypes ={
     books : PropTypes.array.isRequired,
-    creditHour: PropTypes.number.isRequired
+    creditHour: PropTypes.number.isRequired,
+    totalPrice: PropTypes.number.isRequired,
+    totalCreditHour: PropTypes.number.isRequired,
+
 }
 
 export default Cart;

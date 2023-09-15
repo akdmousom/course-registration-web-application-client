@@ -12,18 +12,82 @@ function App() {
   const [books, setBooks] = useState([]);
   const [creditHour, setCreditHour] = useState(20)
   const [totalPrice, setTotalPrice] = useState(0)
+  const [totalCreditHour, setTotalCreditHour] = useState(0)
 
 
-  const handleSelectBook = (book) => {
+  const handleSelectBook = (book, id) => {
 
-    const newBooks = [...books,book]
-    setBooks(newBooks)
+    const newBooks = [...books, book]
+
+   if (books.find(book => book.id === id)) {
+
+    return
+    
+   } else{
+
+    if (creditHour < 0) {
+
+      return
+
+    } else if (books.find((book) => book.id === id)) {
+
+      return
+      
+    } else{
+      setBooks(newBooks)
+    }
+   }
 
   }
 
-  const handleTotalPrice = (price) =>{
-    const newTotalPrice = totalPrice + price
-    setTotalPrice(newTotalPrice)
+  const handleTotalPrice = (price, credit,id) => {
+    const newCreditHours = creditHour - credit;
+    const totalCreditHours = totalCreditHour + credit;
+
+   
+    if (books.find(book => book.id === id)) {
+
+      return alert('Book Already Listed')
+
+      
+    }else{
+      if (newCreditHours < 0) {
+
+        return alert('You Reach your credit hour')
+        
+      }else{
+        setTotalCreditHour(totalCreditHours)
+      }
+  
+      if (newCreditHours < 0) {
+  
+        return alert('Sorry You Reach Your Credit Hour Limit')
+  
+      } else {
+  
+        const newTotalPrice = totalPrice + price
+        setTotalPrice(newTotalPrice)
+  
+      }
+  
+  
+      if (newCreditHours < 0) {
+  
+        return <div className="toast toast-start toast-middle">
+          <div className="alert alert-info">
+            <span>New mail arrived.</span>
+          </div>
+          <div className="alert alert-success">
+            <span>Message sent successfully.</span>
+          </div>
+        </div>
+  
+      } else {
+  
+        setCreditHour(newCreditHours)
+      }
+    }
+
   }
 
   useEffect(() => {
@@ -43,7 +107,7 @@ function App() {
             course.map((course) => <Cards handleTotalPrice={handleTotalPrice} handleSelectBook={handleSelectBook} key={course.id} course={course} />)
           }
         </div>
-        <Cart totalPrice={totalPrice} creditHour={creditHour} books={books} />
+        <Cart totalCreditHour={totalCreditHour} totalPrice={totalPrice} creditHour={creditHour} books={books} />
       </div>
 
 

@@ -20,10 +20,11 @@ function App() {
 
 
   const handleSelectBook = (book, id) => {
+    console.log(book.credit);
 
     const newBooks = [...books, book]
 
-    if (books.find(book => book.id === id) || creditHour <= 0) {
+    if (books.find(book => book.id === id) || creditHour < 0 || totalCreditHour == 20  ) {
 
       Swal.fire({
         title: 'Error!',
@@ -32,7 +33,9 @@ function App() {
         confirmButtonText: 'Try New Course'
       })
 
-    } else {
+    } else if (book.credit > creditHour ) {
+      return
+    } else{
       setBooks(newBooks)
     }
 
@@ -45,12 +48,13 @@ function App() {
 
     if (books.find(book => book.id === id)) {
 
-      return
+      return 
 
 
     } else {
       if (newCreditHours < 0) {
 
+      return(
         Swal.fire({
           title: 'Oh Ho',
           text: 'Course All Ready Added Cha',
@@ -58,18 +62,21 @@ function App() {
           confirmButtonText: 'Try New Course'
         })
 
+      );
       } else {
         setTotalCreditHour(totalCreditHours)
       }
 
       if (newCreditHours < 0) {
 
+       return(
         Swal.fire({
           title: 'Oh Ho',
           text: 'Course All Ready Added',
           icon: 'error',
           confirmButtonText: 'Try New Course'
         })
+       );
 
       } else {
 
@@ -81,12 +88,14 @@ function App() {
 
       if (newCreditHours < 0) {
 
+       return(
         Swal.fire({
           title: 'Oh Ho',
           text: 'You Reach Your Credit Limit',
           icon: 'error',
           confirmButtonText: 'Try Again Later'
         })
+       );
 
       } else {
 
@@ -118,7 +127,7 @@ function App() {
 
 
     </div>
-  )
+  );
 }
 
 export default App

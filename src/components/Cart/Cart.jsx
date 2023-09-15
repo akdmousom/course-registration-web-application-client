@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import './Cart.css'
-const Cart = ({books, creditHour, totalPrice, totalCreditHour}) => {
+const Cart = ({ books, creditHour, totalPrice, totalCreditHour }) => {
 
 
-    
-    
-    
+
+
+
     return (
         <div>
             <div className=" w-full rounded-lg bg-white">
@@ -31,8 +31,8 @@ const Cart = ({books, creditHour, totalPrice, totalCreditHour}) => {
     );
 };
 
-Cart.propTypes ={
-    books : PropTypes.array.isRequired,
+Cart.propTypes = {
+    books: PropTypes.array.isRequired,
     creditHour: PropTypes.number.isRequired,
     totalPrice: PropTypes.number.isRequired,
     totalCreditHour: PropTypes.number.isRequired,

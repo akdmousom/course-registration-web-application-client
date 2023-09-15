@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import './Cart.css'
 const Cart = ({books, creditHour, totalPrice, totalCreditHour}) => {
 
 

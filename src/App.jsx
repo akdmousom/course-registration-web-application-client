@@ -4,6 +4,10 @@ import './App.css'
 import Cards from './components/Cards/Cards'
 import Cart from './components/Cart/Cart'
 import { useEffect } from 'react';
+import Swal from 'sweetalert2'
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 function App() {
@@ -19,71 +23,73 @@ function App() {
 
     const newBooks = [...books, book]
 
-   if (books.find(book => book.id === id)) {
+    if (books.find(book => book.id === id) || creditHour <= 0) {
 
-    return
-    
-   } else{
+      Swal.fire({
+        title: 'Error!',
+        text: 'Course All Ready Added',
+        icon: 'error',
+        confirmButtonText: 'Try New Course'
+      })
 
-    if (creditHour < 0) {
-
-      return
-
-    } else if (books.find((book) => book.id === id)) {
-
-      return
-      
-    } else{
+    } else {
       setBooks(newBooks)
     }
-   }
 
   }
 
-  const handleTotalPrice = (price, credit,id) => {
+  const handleTotalPrice = (price, credit, id) => {
     const newCreditHours = creditHour - credit;
     const totalCreditHours = totalCreditHour + credit;
 
-   
+
     if (books.find(book => book.id === id)) {
 
-      return alert('Book Already Listed')
+      return
 
-      
-    }else{
+
+    } else {
       if (newCreditHours < 0) {
 
-        return alert('You Reach your credit hour')
-        
-      }else{
+        Swal.fire({
+          title: 'Oh Ho',
+          text: 'Course All Ready Added Cha',
+          icon: 'error',
+          confirmButtonText: 'Try New Course'
+        })
+
+      } else {
         setTotalCreditHour(totalCreditHours)
       }
-  
+
       if (newCreditHours < 0) {
-  
-        return alert('Sorry You Reach Your Credit Hour Limit')
-  
+
+        Swal.fire({
+          title: 'Oh Ho',
+          text: 'Course All Ready Added',
+          icon: 'error',
+          confirmButtonText: 'Try New Course'
+        })
+
       } else {
-  
+
         const newTotalPrice = totalPrice + price
         setTotalPrice(newTotalPrice)
-  
+
       }
-  
-  
+
+
       if (newCreditHours < 0) {
-  
-        return <div className="toast toast-start toast-middle">
-          <div className="alert alert-info">
-            <span>New mail arrived.</span>
-          </div>
-          <div className="alert alert-success">
-            <span>Message sent successfully.</span>
-          </div>
-        </div>
-  
+
+        Swal.fire({
+          title: 'Oh Ho',
+          text: 'You Reach Your Credit Limit',
+          icon: 'error',
+          confirmButtonText: 'Try Again Later'
+        })
+
       } else {
-  
+
         setCreditHour(newCreditHours)
       }
     }

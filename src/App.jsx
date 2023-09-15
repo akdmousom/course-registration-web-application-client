@@ -8,8 +8,6 @@ import Swal from 'sweetalert2'
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
-
 function App() {
 
   const [course, setCourse] = useState([]);

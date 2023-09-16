@@ -55,7 +55,7 @@ function App() {
       return(
         Swal.fire({
           title: 'Oh Ho',
-          text: 'Course All Ready Added Cha',
+          text: 'Check Your Limit',
           icon: 'error',
           confirmButtonText: 'Try New Course'
         })
